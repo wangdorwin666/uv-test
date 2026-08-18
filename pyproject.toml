@@ -1,0 +1,32 @@
+[project]
+name = "uv-test"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "wangdorwin666", email = "dorwin@qq.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "beautifulsoup4>=4.15.0",
+    "flask>=3.1.3",
+    "flask-cors>=6.0.5",
+    "langchain>=1.3.14",
+    "langchain-deepseek>=1.1.0",
+    "langchain-tavily>=0.2.18",
+    "langgraph-checkpoint-sqlite>=3.1.1",
+    "notebook>=7.6.1",
+    "python-dotenv>=1.2.2",
+    "requests>=2.34.2",
+]
+
+[project.scripts]
+uv-test = "uv_test:main"
+
+[[tool.uv.index]]
+url = "https://pypi.tuna.tsinghua.edu.cn/simple"
+default = true
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
