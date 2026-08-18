@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>小说推荐器</title>
+  <style>
+    body { font-family: Arial, "Microsoft YaHei"; max-width: 800px; margin: 40px auto; padding: 0 16px; }
+    textarea, input { width:100%; padding:8px; margin:8px 0; box-sizing:border-box; }
+    .btn { padding:10px 16px; background:#2d8cff; color:white; border:none; cursor:pointer; }
+    .error { color: red; }
+    pre.report { background:#f6f8fa; padding:12px; white-space:pre-wrap; }
+  </style>
+</head>
+<body>
+  <h1>小说推荐器</h1>
+  <p>输入你想要的小说题材（例如：都市、悬疑、穿越、科幻 时间旅行、玄幻、青春言情 等），可选填写偏好（篇幅、风格、目标读者）。</p>
+
+  {% if error %}
+    <div class="error">{{ error }}</div>
+  {% endif %}
+
+  <form action="/recommend" method="post">
+    <label>小说题材 / 关键词</label>
+    <input type="text" name="genre" placeholder="例如：科幻，时间旅行，硬科幻" required />
+    <label>可选偏好（例如：短篇；轻松；适合青少年）</label>
+    <input type="text" name="preferences" placeholder="例如：短篇、适合入门、女性向" />
+    <button class="btn" type="submit">获取推荐</button>
+  </form>
+</body>
+</html>
